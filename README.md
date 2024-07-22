@@ -11,7 +11,7 @@ This project is part of Codedex's final assignment to obtain certification.
 - **Python Fundamentals**
 
 ### Versions
-- 'Python' 3.10+
+- Python 3.10+
 - `python-dotenv` 0.21.0+
 - `openai` 1.0.0+
 
