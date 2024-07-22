@@ -1,11 +1,22 @@
-Codedex's Python final project in order to get my certification.
+# Codedex's Python Final Project
 
-Track: 'Generate a Blog with OpenAI'
+## Generate a Blog with OpenAI
 
-Pre-requisites: Python Fundamentals
-Versions: Python 3.10+, python-dotenv 0.21.0, openai 1.0.0
+This project is part of Codedex's final assignment to obtain certification.
 
-*Important Note: Make sure to add your own API key into a '.env' file.*
+### Track
+- **Generate a Blog with OpenAI**
 
-DESC:
-Using OpenAI's API (Application Programming Interface) we will be creating a blog generator. Essentially, this project will read the user's prompt and use OpenAI's ChatGPT-3 to create a paragraph about the given topic.
+### Pre-requisites
+- **Python Fundamentals**
+
+### Versions
+- Python 3.10+
+- `python-dotenv` 0.21.0
+- `openai` 1.0.0
+
+### Important Note
+Make sure to add your own API key into a `.env` file.
+
+### Description
+Using OpenAI's API (Application Programming Interface), we will create a blog generator. This project reads the user's prompt and uses OpenAI's ChatGPT-3 to generate a paragraph about the given topic.
