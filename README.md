@@ -7,7 +7,7 @@ This project is part of Codedex's final assignment to obtain certification.
 ### Track
 - **Generate a Blog with OpenAI**
 
-### Pre-requisites
+### Prerequisites
 - **Python Fundamentals**
 
 ### Versions
@@ -62,5 +62,5 @@ Using OpenAI's API (Application Programming Interface), we will create a blog ge
 
     The project is working with that specific variable name and if a different name is used make sure to change the other variables to your new enviorement variable name.
 
-The installation of a venv is not necessary, however, it will make working with everything easier. Alternatively, you can just do steps 4 and 5.
+The installation of a venv is not necessary. However, it will make working with everything easier. Alternatively, you can just do *step 4* and *step 5*.
 
