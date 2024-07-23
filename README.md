@@ -24,7 +24,6 @@ Using OpenAI's API (Application Programming Interface), we will create a blog ge
 ---
 
 ## Setup Instructions
-### Clone The Repository
 1. **Clone the Repository**
     
     inside your terminal, cd into the desired working space:
