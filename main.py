@@ -12,7 +12,7 @@ from dotenv import dotenv_values
 CONFIG = dotenv_values('.env') # constant variable for enviorement variable housing our api key.
 KEY = CONFIG['API_KEY'] # grabs api key as a dictionary and stores it in const 'KEY' variable.
 
-openai.api_key = KEY
+openai.api_key = KEY # Authorizes our API key!
 
 def generate_blog(topic):
     
@@ -21,7 +21,7 @@ def generate_blog(topic):
         model = 'gpt-3.5-turbo-instruct', # 'model' uses a specific model made by openai.
         prompt = 'Write a paragraph about the following topic. ' + topic, # takes in our 'topic' argument passed in and chat will try to follow it's instruction.
         max_tokens = 400, # Tokens -- determines length of paragraph. 75 words is roughly 100 tokens. 1paragrah:400tokens rough ratio.
-        temperature = 0.3 # determines the randomness of the response. Can be fine tuned using a range (0, 1). 0 being more direct/clear and 1 being different and more creative.
+        temperature = 0.3 # determines the randomness of the response. Can be fine tuned using a range (0, 1). 0 being more direct/clear and 1 being different each time and more creative.
     )
 
     output = response.choices[0].text
@@ -29,7 +29,7 @@ def generate_blog(topic):
 
 def main():
     
-    result = generate_blog('python')
+    result = generate_blog('Why you suck at Valorant.')
     print(result)
 
 if __name__ == '__main__':
