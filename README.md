@@ -55,3 +55,12 @@ Using OpenAI's API (Application Programming Interface), we will create a blog ge
     ```sh
     pip install -r requirements.txt
     ```
+
+5. **Create .env File**
+
+    At the root of your working project. Create a '.env' file and add your API key in a envioremental variable named 'API_KEY'.
+
+    The project is working with that specific variable name and if a different name is used make sure to change the other variables to your new enviorement variable name.
+
+The installation of a venv is not necessary, however, it will make working with everything easier. Alternatively, you can just do steps 4 and 5.
+
