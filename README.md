@@ -26,16 +26,33 @@ Using OpenAI's API (Application Programming Interface), we will create a blog ge
 ## Setup Instructions
 ### Clone The Repository
 1. **Clone the Repository**
+    
+    inside your terminal, cd into the desired working space:
    ```sh
    git clone https://github.com/your-username/your-repo.git
    cd your-repo
 
 2. **Create a Virtual Enviorement**
-    (in terminal): python/python3 -m venv venv
+    
+    Type this into your console (make sure you're in the root of your working directory).
+    ```sh
+    python/python3 -m venv venv
 
 3. **Activate VENV**
-    windows: .\venv\Scripts\activate
-    MacOS/Linux: source venv/bin/activate
+    
+    windows: 
+    ```bash
+    .\venv\Scripts\activate
+    ```
+    
+    MacOS/Linux:
+    ```sh
+    source venv/bin/activate
+    ```
 
-4. **Install Requirements**
-    (in terminal): pip install -r requirements.txt
+4. **Install Dependencies**
+    
+    Type this into console:
+    ```sh
+    pip install -r requirements.txt
+    ```
