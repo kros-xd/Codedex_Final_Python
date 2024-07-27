@@ -30,7 +30,7 @@ def generate_blog(topic):
         model = 'gpt-3.5-turbo-instruct', # 'model' uses a specific model made by openai.
         prompt = 'Write a paragraph about the following topic. ' + topic, # takes in our 'topic' argument passed in and GPT-3.5 will try to follow it's instruction.
         max_tokens = 400, # Tokens -- determines length of paragraph. 75 words is roughly 100 tokens. 1paragrah:400tokens rough ratio.
-        temperature = 0.375 # determines the randomness of the response. Can be fine tuned using a range (0, 1). 0 being more direct/clear and 1 being different each time and more creative.
+        temperature = 0.3 # determines the randomness of the response. Can be fine tuned using a range (0, 1). 0 being more direct/clear and 1 being different each time and more creative.
     )
 
     output = response.choices[0].text
@@ -56,7 +56,7 @@ def main():
         print("\nWould you like to generate a paragraph based on a given topic?")
         print("\n\t1.) Yes\n\t2.) No")
         # grab user choice if they want to generate a paragraph.
-        choice = user_input() 
+        choice = user_input().lower() 
         # choice options to check in conditional while loop.
         options = [
             'yes',
@@ -67,28 +67,33 @@ def main():
             '2'
         ]
         
-        while choice.lower() not in options: # check to see if the given choice is valid.
+        while choice not in options: # check to see if the given choice is valid.
             
             clear_screen() # clears terminal screen
             print(f"\n'{choice}' Is not a valid option. Please type the corresponding number or choice.")
             print("\n\nWould you like to generate a paragraph based on a given topic?")
             print("\n\t1.) Yes\n\t2.) No")
-            choice = user_input()
+            choice = user_input().lower()
 
         while choice in options[:3]: # keep looping as long as the user choice is in first 3 items of options list.
             
             clear_screen()
-            print("\nWhat would you like the topic to be about?")
+            print("\nWhat would you like the topic to be about?") # grab topic prompt
             prompt = user_input()
-            print('\n'*4)
-            print(generate_blog(prompt))
-            print('\n'*4)
-            print("\nWould you like to write about another topic?")
-            choice = user_input()
 
+            print('\n'*4)
+            print(generate_blog(prompt)) # pass in the user prompt to generate!
+            print('\n'*4)
+
+            print("\nWould you like to write about another topic?") # ask if they want to generate more. Otherwise, just end.
+            print("\n\t1.) Yes\n\t2.) No")
+            choice = user_input().lower()
+
+        # if user decides to stop writing or chooses to end the script early this will clear the screen and end.
         clear_screen()
         print("\nThanks for trying this out!")
         running = False
 
 if __name__ == '__main__':
+    # main script if this file is directly ran.
     main()
