@@ -35,7 +35,7 @@ Using OpenAI's API (Application Programming Interface), we will create a blog ge
     
     Type this into your console (make sure you're in the root of your working directory).
     ```sh
-    python/python3 -m venv venv
+    python (or python3) -m venv venv
 
 3. **Activate VENV**
     

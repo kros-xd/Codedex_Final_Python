@@ -4,6 +4,8 @@ make sure these versions >= 'python-dotenv 0.21.0', 'openai 1.0.0'.
 
 When using this file. PLEASE make sure to use your own API key from OpenAI and place it in a .env file
 with the name 'API_KEY'. Otherwise, you will need to make adjustments to match your named variables.
+
+Before using; check out the README.md first.
 '''
 
 import openai
@@ -56,7 +58,7 @@ def main():
         print("\nWould you like to generate a paragraph based on a given topic?")
         print("\n\t1.) Yes\n\t2.) No")
         # grab user choice if they want to generate a paragraph.
-        choice = user_input().lower() 
+        choice = user_input()
         # choice options to check in conditional while loop.
         options = [
             'yes',
@@ -67,15 +69,15 @@ def main():
             '2'
         ]
         
-        while choice not in options: # check to see if the given choice is valid.
+        while choice.lower() not in options: # check to see if the given choice is valid.
             
             clear_screen() # clears terminal screen
             print(f"\n'{choice}' Is not a valid option. Please type the corresponding number or choice.")
             print("\n\nWould you like to generate a paragraph based on a given topic?")
             print("\n\t1.) Yes\n\t2.) No")
-            choice = user_input().lower()
+            choice = user_input()
 
-        while choice in options[:3]: # keep looping as long as the user choice is in first 3 items of options list.
+        while choice.lower() in options[:3]: # keep looping as long as the user choice is in first 3 items of options list.
             
             clear_screen()
             print("\nWhat would you like the topic to be about?") # grab topic prompt
@@ -86,8 +88,8 @@ def main():
             print('\n'*4)
 
             print("\nWould you like to write about another topic?") # ask if they want to generate more. Otherwise, just end.
-            print("\n\t1.) Yes\n\t2.) No")
-            choice = user_input().lower()
+            print("\n\t1.) Yes\n\t2.) Any input to QUIT")
+            choice = user_input()
 
         # if user decides to stop writing or chooses to end the script early this will clear the screen and end.
         clear_screen()
