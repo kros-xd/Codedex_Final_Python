@@ -88,7 +88,7 @@ def main():
             print('\n'*4)
 
             print("\nWould you like to write about another topic?") # ask if they want to generate more. Otherwise, just end.
-            print("\n\t1.) Yes\n\t2.) Any input to QUIT")
+            print("\n\t1.) Yes\n\t2.) Any other input to QUIT")
             choice = user_input()
 
         # if user decides to stop writing or chooses to end the script early this will clear the screen and end.
