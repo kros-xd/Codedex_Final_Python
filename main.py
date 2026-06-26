@@ -1,3 +1,6 @@
+import openai
+from dotenv import dotenv_values
+import os # this is only used to clear the terminal screen.
 '''
 We are using modules: 'openai', 'python-dotenv', 'os'.
 make sure these versions >= 'python-dotenv 0.21.0', 'openai 1.0.0'.
@@ -5,29 +8,20 @@ make sure these versions >= 'python-dotenv 0.21.0', 'openai 1.0.0'.
 When using this file. PLEASE make sure to use your own API key from OpenAI and place it in a .env file
 with the name 'API_KEY'. Otherwise, you will need to make adjustments to match your named variables.
 
-Before using; check out the README.md first.
+Before using check the 'README.md' first.
 '''
-
-import openai
-from dotenv import dotenv_values
-import os # this is only used to clear the terminal screen.
-
-CONFIG = dotenv_values('.env') # constant variable for enviorement variable housing our api key.
+CONFIG = dotenv_values('.env') # constant variable for environment variable housing our api key.
 KEY = CONFIG['API_KEY'] # grabs api key as a dictionary and stores it in const 'KEY' variable.
-
 openai.api_key = KEY # Authorizes our API key!
 
 def clear_screen():
-    # check if user OS is on windows
-    if os.name == 'nt':
+    if os.name == 'nt':   # check if user OS is on windows
         os.system('cls')
-    # If it's not windows, it must be mac, linux, or something else.
-    else:
+    else:                 # If it's not windows, it must be mac, linux, or something else.
         os.system('clear')
 
-
 def generate_blog(topic):
-    # 'response' stores the output created by openai.
+     # 'response' stores the output created by openai.
     response = openai.completions.create(
         model = 'gpt-3.5-turbo-instruct', # 'model' uses a specific model made by openai.
         prompt = 'Write a paragraph about the following topic. ' + topic, # takes in our 'topic' argument passed in and GPT-3.5 will try to follow it's instruction.
@@ -37,7 +31,6 @@ def generate_blog(topic):
 
     output = response.choices[0].text
     return output
-
 
 def user_input():
     # Made function to grab user input.
@@ -50,15 +43,12 @@ def user_input():
 
 
 def main():
-
     running = True
     while running:
-
-        clear_screen() # clears terminal screen
+        clear_screen()
         print("\nWould you like to generate a paragraph based on a given topic?")
         print("\n\t1.) Yes\n\t2.) No")
-        # grab user choice if they want to generate a paragraph.
-        choice = user_input()
+        choice = user_input() # grab user choice if they want to generate a paragraph.
         # choice options to check in conditional while loop.
         options = [
             'yes',
@@ -70,32 +60,31 @@ def main():
         ]
         
         while choice.lower() not in options: # check to see if the given choice is valid.
-            
-            clear_screen() # clears terminal screen
+            clear_screen()
             print(f"\n'{choice}' Is not a valid option. Please type the corresponding number or choice.")
             print("\n\nWould you like to generate a paragraph based on a given topic?")
             print("\n\t1.) Yes\n\t2.) No")
             choice = user_input()
 
         while choice.lower() in options[:3]: # keep looping as long as the user choice is in first 3 items of options list.
-            
             clear_screen()
-            print("\nWhat would you like the topic to be about?") # grab topic prompt
+            # grab topic prompt
+            print("\nWhat would you like the topic to be about?")
             prompt = user_input()
-
+            
+            # pass in the user prompt to generate!
             print('\n'*4)
-            print(generate_blog(prompt)) # pass in the user prompt to generate!
+            print(generate_blog(prompt))
             print('\n'*4)
-
-            print("\nWould you like to write about another topic?") # ask if they want to generate more. Otherwise, just end.
+            
+            # ask if they want to generate more. Otherwise, just end.
+            print("\nWould you like to write about another topic?")
             print("\n\t1.) Yes\n\t2.) Any other input to QUIT")
             choice = user_input()
 
-        # if user decides to stop writing or chooses to end the script early this will clear the screen and end.
         clear_screen()
         print("\nThanks for trying this out!")
         running = False
 
 if __name__ == '__main__':
-    # main script if this file is directly ran.
     main()
