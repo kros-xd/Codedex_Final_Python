@@ -31,7 +31,7 @@ Using OpenAI's API (Application Programming Interface), we will create a blog ge
    git clone https://github.com/your-username/your-repo.git
    cd your-repo
 
-2. **Create a Virtual Enviorement**
+2. **Create a Virtual Environment**
     
     Type this into your console (make sure you're in the root of your working directory).
     ```sh
@@ -58,9 +58,9 @@ Using OpenAI's API (Application Programming Interface), we will create a blog ge
 
 5. **Create .env File**
 
-    At the root of your working project. Create a '.env' file and add your API key in a envioremental variable named 'API_KEY'.
+    At the root of your working project. Create a '.env' file and add your API key in an environmental variable named 'API_KEY'.
 
-    The project is working with that specific variable name and if a different name is used make sure to change the other variables to your new enviorement variable name.
+    The project is working with that specific variable name and if a different name is used make sure to change the other variables to your new environment variable name.
 
 **The installation of a venv is not necessary. However, it will make working with everything easier. Alternatively, you can just do *step 4* and *step 5*.**
 
